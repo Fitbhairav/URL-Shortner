@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapLink | Premium URL Shortener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SnapLink</h1>
+            <p>Lightning fast URL shortener with real-time analytics.</p>
+        </header>
+
+        <main>
+            <div class="glass-panel shorten-panel">
+                <h2>Shorten a URL</h2>
+                <form id="shorten-form">
+                    <input type="url" id="original-url" placeholder="Enter a long URL to make simple..." required>
+                    <button type="submit">Shorten <span class="loader hidden" id="shorten-loader"></span></button>
+                </form>
+                <div id="shorten-result" class="result-box hidden">
+                    <p>Your short URL is ready!</p>
+                    <div class="url-display">
+                        <a href="#" id="short-url-link" target="_blank"></a>
+                        <button id="copy-btn">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel analytics-panel">
+                <h2>View Analytics</h2>
+                <form id="analytics-form">
+                    <input type="text" id="short-id-input" placeholder="Enter short ID (e.g. jB7a)..." required>
+                    <button type="submit">Analyze</button>
+                </form>
+                <div id="analytics-result" class="result-box hidden">
+                    <div class="stat-card">
+                        <h3 id="stat-total-clicks">0</h3>
+                        <p>Total Clicks</p>
+                    </div>
+                    <div class="history-list" id="click-history">
+                        <!-- Clicks will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
